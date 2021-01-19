@@ -65,5 +65,13 @@ namespace Travel.Controllers
       _db.SaveChanges();
     }
 
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var destinationToDelete = _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
+      _db.Destinations.Remove(destinationToDelete);
+      _db.SaveChanges();
+    }
+
   }
 }
