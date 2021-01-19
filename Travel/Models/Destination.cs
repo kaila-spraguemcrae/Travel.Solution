@@ -6,14 +6,17 @@ namespace Travel.Models
     {
         public int DestinationId { get; set; }
         [Required]
-        [StringLength(20)]
-        public string Name { get; set; }
+        public string Country { get; set; }
         [Required]
-        public string Species { get; set; }
+        public string City { get; set; }
         [Required]
-        [Range(0, 200, ErrorMessage = "Age must be between 0 and 200.")]
-        public int Age { get; set; }
+        public string Review { get; set; }
         [Required]
-        public string Gender { get; set; }
+        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
+        public int Rating { get; set; }
+        
+        //[Required]
+        //[Compare("User_Name")]
+        //public string UserName { get; set; }
     }
 }
