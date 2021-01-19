@@ -51,5 +51,11 @@ namespace Travel.Controllers
       _db.SaveChanges();
     }
 
+    [HttpGet("{id}")]
+    public ActionResult<Destination> Get(int id)
+    {
+      return _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
+    }
+
   }
 }
