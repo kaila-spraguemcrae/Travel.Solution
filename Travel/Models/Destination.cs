@@ -14,9 +14,9 @@ namespace Travel.Models
         [Required]
         [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
         public int Rating { get; set; }
-        
+
         //[Required]
-        //[Compare("User_Name")]
+        //[Compare("User_Name", ErrorMessage = "username must match username of review")]
         //public string UserName { get; set; }
     }
 }
