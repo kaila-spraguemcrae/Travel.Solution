@@ -57,5 +57,13 @@ namespace Travel.Controllers
       return _db.Destinations.FirstOrDefault(entry => entry.DestinationId == id);
     }
 
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Destination destination)
+    {
+      destination.DestinationId = id;
+      _db.Entry(destination).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
+
   }
 }
