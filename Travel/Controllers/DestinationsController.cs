@@ -41,8 +41,14 @@ namespace Travel.Controllers
       {
       query = query.Where(entry => entry.Rating == rating);
       }
-      
+
       return query.ToList();
+    }
+
+    [HttpPost]
+    public void Post([FromBody] Destination destination) {
+      _db.Destinations.Add(destination);
+      _db.SaveChanges();
     }
 
   }
